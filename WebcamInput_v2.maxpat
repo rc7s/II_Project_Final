@@ -38,6 +38,71 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-195",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 336.670013, 892.669983, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "*~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-194",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 384.670013, 936.666687, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-192",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 416.666687, 936.666687, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "1000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-189",
+					"maxclass" : "newobj",
+					"numinlets" : 5,
+					"numoutlets" : 4,
+					"outlettype" : [ "signal", "signal", "", "" ],
+					"patching_rect" : [ 384.670013, 968.669983, 61.0, 22.0 ],
+					"style" : "",
+					"text" : "adsr~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-188",
+					"maxclass" : "newobj",
+					"numinlets" : 4,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "", "", "" ],
+					"patching_rect" : [ 845.330017, 928.0, 61.0, 22.0 ],
+					"style" : "",
+					"text" : "yafr"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bufsize" : 32,
 					"calccount" : 32,
 					"id" : "obj-187",
@@ -121,9 +186,9 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 254.000046, 496.0, 119.0, 22.0 ],
+					"patching_rect" : [ 255.000046, 496.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "scale 0. 7. 1 200 0.9"
+					"text" : "scale 0. 23. 1 200"
 				}
 
 			}
@@ -444,7 +509,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 335.166687, 764.16333, 22.0, 97.0 ],
+					"patching_rect" : [ 335.166687, 761.496643, 22.0, 97.0 ],
 					"style" : ""
 				}
 
@@ -456,7 +521,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 324.166687, 874.830139, 44.0, 44.0 ],
+					"patching_rect" : [ 324.166687, 936.666687, 44.0, 44.0 ],
 					"prototypename" : "helpfile",
 					"style" : ""
 				}
@@ -590,7 +655,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 721.666687, 528.666687, 116.0, 22.0 ],
 					"style" : "",
-					"text" : "scale 0. 7. -48 0 0.4"
+					"text" : "scale 0. 5. -48 0 0.4"
 				}
 
 			}
@@ -3938,6 +4003,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-155", 0 ],
+					"order" : 1,
+					"source" : [ "obj-154", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-194", 0 ],
+					"order" : 0,
 					"source" : [ "obj-154", 0 ]
 				}
 
@@ -4141,16 +4215,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 1 ],
-					"order" : 0,
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-195", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -4173,6 +4238,43 @@
 				"patchline" : 				{
 					"destination" : [ "obj-175", 1 ],
 					"source" : [ "obj-183", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-195", 1 ],
+					"source" : [ "obj-189", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-189", 1 ],
+					"source" : [ "obj-192", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-189", 0 ],
+					"source" : [ "obj-194", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 1 ],
+					"order" : 0,
+					"source" : [ "obj-195", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"order" : 1,
+					"source" : [ "obj-195", 0 ]
 				}
 
 			}
@@ -4723,6 +4825,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "yafr.maxpat",
+				"bootpath" : "/Users/Shared/Max 7/Examples/legacy-examples/effects/reverb",
+				"patcherrelativepath" : "../../../Users/Shared/Max 7/Examples/legacy-examples/effects/reverb",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "cv.jit.HSflow.mxo",
 				"type" : "iLaX"
 			}
